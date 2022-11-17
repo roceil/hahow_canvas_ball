@@ -261,15 +261,20 @@ canvas.addEventListener("mousemove", (e) => {
   滑鼠位置 = 滑鼠最新位置;
 });
 
+
+
 // !監聽觸控按著事件
 canvas.addEventListener("touchstart", (e) => {
   // 賦於滑鼠點擊時的位置
   滑鼠位置 = {
-    x: e.x,
-    y: e.y,
+    x: e.touches[0]['clientX'],
+    y: e.touches[0]['clientY']
   };
+
+
   // 用距離函式判斷滑鼠點擊時距離圓球半徑的距離
   let 判斷距離 = 取得距離(滑鼠位置, ball.位置);
+console.log(滑鼠位置);
   // 如果滑鼠點擊時位置小於圓球半徑，更改拖曳狀態
   if (判斷距離 <= ball.半徑) {
     ball.dragging = true;
@@ -285,8 +290,8 @@ canvas.addEventListener("touchend", (e) => {
 canvas.addEventListener("touchmove", (e) => {
   // 紀錄滑鼠移動後最新的位置
   let 滑鼠最新位置 = {
-    x: e.x,
-    y: e.y,
+    x: e.touches[0]['clientX'],
+    y: e.touches[0]['clientY']
   };
 
   //假如圓球拖曳狀態開啟
