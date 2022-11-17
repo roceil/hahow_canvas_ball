@@ -262,7 +262,7 @@ canvas.addEventListener("mousemove", (e) => {
 });
 
 // !監聽觸控按著事件
-canvas.addEventListener("touchdown", (e) => {
+canvas.addEventListener("touchstart", (e) => {
   // 賦於滑鼠點擊時的位置
   滑鼠位置 = {
     x: e.x,
@@ -277,7 +277,7 @@ canvas.addEventListener("touchdown", (e) => {
 });
 
 // !監聽觸控放開事件
-canvas.addEventListener("touchup", (e) => {
+canvas.addEventListener("touchend", (e) => {
   ball.dragging = false;
 });
 
