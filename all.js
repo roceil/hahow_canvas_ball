@@ -265,6 +265,7 @@ canvas.addEventListener("mousemove", (e) => {
 
 // !監聽觸控按著事件
 canvas.addEventListener("touchstart", (e) => {
+  e.preventDefault()
   // 賦於滑鼠點擊時的位置
   滑鼠位置 = {
     x: e.touches[0]['clientX'],
@@ -283,11 +284,13 @@ console.log(滑鼠位置);
 
 // !監聽觸控放開事件
 canvas.addEventListener("touchend", (e) => {
+  e.preventDefault()
   ball.dragging = false;
 });
 
 // !監聽觸控移動事件
 canvas.addEventListener("touchmove", (e) => {
+  e.preventDefault()
   // 紀錄滑鼠移動後最新的位置
   let 滑鼠最新位置 = {
     x: e.touches[0]['clientX'],
